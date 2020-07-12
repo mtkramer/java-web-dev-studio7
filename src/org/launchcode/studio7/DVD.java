@@ -1,10 +1,17 @@
 package org.launchcode.studio7;
 
-public class DVD {
+public class DVD extends OpticalStorage implements Spinner {
 
-    // TODO: Implement your custom interface.
+    private Boolean isSpinning = false;
 
-    // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-    //  need to be declared separately.
+    public DVD(double gigaByteStorageCapacity) {
+        super(gigaByteStorageCapacity);
+    }
+
+    @Override
+    public Boolean spinDisc() {
+        this.isSpinning = !this.isSpinning;
+        return this.isSpinning;
+    }
 
 }
